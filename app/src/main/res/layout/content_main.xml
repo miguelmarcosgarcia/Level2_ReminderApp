@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <!--A RecyclerView widget is used to show a list of items -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvReminders"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--
+    A TextInputLayout is used to create a material design looking input field.
+    The layout has been given the app:layout_constraintWidth_percent="0.75" so that the width
+    equals 75% of the width of the screen so that it doesn’t overlap with the floating action button.
+    -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.75">
+        <!--
+            A TextInputEditText has been used within the TextInputLayout which is the actual input
+            field. It has given a hint and label using android:hint=”@string/give_reminder”. Also
+            the input type can be set to text using android:inputType="text"
+            -->
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etReminder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="New reminder"
+            android:inputType="text"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
